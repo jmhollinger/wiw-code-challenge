@@ -38,22 +38,24 @@ def create_data_frame(url_list):
     num_of_files = len(url_list)
     logging.info(f"Attempting to process {num_of_files} files")
 
-    # Get column layout of first file.
-    initial_file = pd.read_csv(url_list[0])
-    column_layout = list(initial_file.columns)
-
-    # List of hold all the data frame for concatenation.
+    # List to hold all the data frames for concatenation.
     data_frame_list = []
+
+    # List to hold the column layout of the first successfully read file.
+    column_layout = []
     
     # Loop through URLS to read data
     for url in url_list:
-        # Try to create dataframe, on error set an empty one.
         try:
             data_frame = pd.read_csv(url)
         except:
             logging.warning(f"Could not create dataframe from file at {url}")
             data_frame = pd.DataFrame()
             pass
+        
+        # Set the column layout based on the first successfully read file.
+        if not column_layout:
+            column_layout = list(data_frame.columns)
 
         if data_frame.empty != True:
             # Check the column layout against the first file for consistency
@@ -64,8 +66,11 @@ def create_data_frame(url_list):
             else:
                 logging.warning(f"File {url} has an inconsistent layout.")
 
-    merged_data_frame = pd.concat(data_frame_list)
+    if len(data_frame_list) > 0:
+        merged_data_frame = pd.concat(data_frame_list)
+    else:
+        merged_data_frame = pd.DataFrame()
 
-    logging.info(f"Successfully processed {len(data_frame_list)} files")
+    logging.info(f"Successfully processed {len(data_frame_list)} files. {merged_data_frame.shape[0]} rows and {merged_data_frame.shape[1]} columns.")
 
     return merged_data_frame
