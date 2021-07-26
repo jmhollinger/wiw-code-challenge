@@ -67,7 +67,7 @@ def create_data_frame(url_list):
                 logging.warning(f"File {url} has an inconsistent layout.")
 
     if len(data_frame_list) > 0:
-        merged_data_frame = pd.concat(data_frame_list)
+        merged_data_frame = pd.concat(data_frame_list, axis=0, ignore_index=True )
     else:
         merged_data_frame = pd.DataFrame()
 

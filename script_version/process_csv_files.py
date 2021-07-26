@@ -5,9 +5,10 @@ import csv_processor as csv_processor
 files = csv_processor.create_file_list()
 
 # Merge Files into Data Frame
-data = csv_processor.create_data_frame(files)
+merged_data = csv_processor.create_data_frame(files)
 
-# Save CSV
-csv_processor.pivot_and_export(data)
+# Pivot Data
+pivoted_dataframe = merged_data.pivot_table(index="user_id", columns="path", values="length", aggfunc="sum")
 
-
+# Save to CSV
+pivoted_dataframe.to_csv("data/web_traffic_data.csv")
