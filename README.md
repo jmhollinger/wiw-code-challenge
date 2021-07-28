@@ -17,7 +17,7 @@ Depending on your system configuration you may need to use `python3` or `python`
 
 ## Tests
 
-This program uses pytest for unit testing using. To run tests simply run `pytest`.
+This program uses pytest for unit testing. To run tests simply run `pytest`.
 
 ## Documentation
 
