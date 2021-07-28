@@ -3,7 +3,7 @@
 
 ##  Setup
 
-Depending on your system configuration you may need to use `python3` or `python` in commands.
+Depending on your system configuration you may need to use `python3` or `python` and `pip3` or `pip` in commands.
 
 1. Clone the repository
 2. Create the virtual environment `python3 -m venv venv` on MacOS and Windows
