@@ -71,6 +71,6 @@ def create_data_frame(url_list):
     else:
         merged_data_frame = pd.DataFrame()
 
-    logging.info(f"Successfully processed {len(data_frame_list)} files. {merged_data_frame.shape[0]} rows and {merged_data_frame.shape[1]} columns.")
+    logging.info(f"Successfully processed {len(data_frame_list)} files. {merged_data_frame.shape[0]} rows and {merged_data_frame.shape[1]} columns")
 
     return merged_data_frame

@@ -3,12 +3,15 @@
 
 ##  Setup
 
+Depending on your system configuration you may need to use `python3` or `python` in commands.
+
 1. Clone the repository
-2. Create the virtual environment `python3 -m venv venv`
-3. Initialize the virtual environment `source venv/bin/activate`
+2. Create the virtual environment `python3 -m venv venv` on MacOS and Windows
+3. Initialize the virtual environment `source venv/bin/activate` on MacOS or `"venv/Scripts/Activate"` on Windows
 4. Install dependencies from requirements.txt by running `pip3 install -r requirements.txt`
 
-## Execution
+## Execute Program
+
 1. To process CSVs run `python3 process_csv_files.py`
 2. The final csv file will be saved to `data/web_traffic_data.csv`
 
@@ -18,9 +21,7 @@ This program uses pytest for unit testing using. To run tests simply run `pytest
 
 ## Documentation
 
-Pandas handles dataframe loading and manipulation.
-
-The program contains two functions that are part of the csv_processor module:
+Pandas handles dataframe loading and manipulation. This program contains two functions that are part of the csv_processor module:
 
 ### create_file_list(base_url="", identifier_list=[], file_extension="")
 
