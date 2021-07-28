@@ -1,34 +1,22 @@
 # wiw-code-challenge
  Response to When I Work code challenge to retrieve a set of csv files, transform the data, and return a new single csv with the result.
 
-## Structure
-
-There are two versions of this program included:
-
-1. script_version : Can be run locally to create the csv files using the setup instructions below
-2. aws_lambda_version : Designed to be deployed as a Lambda serverless function. The exported file is saved to a public s3 location.
-
-##  Script Setup
+##  Setup
 
 1. Clone the Repo
 2. Initialize the venv
 3. Install dependencies from requirements.txt
-
-## AWS Lambda Setup
-
-Coming Soon
+4. Run python3 process_csv_files.py OR run process_csv
 
 ## Tests
 
-This program uses pytest for unit testing using:
-
-pytest
+This program uses pytest for unit testing using. To run tests simply run pytest from the root of the repo.
 
 ## Documentation
 
-Pandas handles dataframe loading and manipulation. Boto3 is used for S3 operations in the lambda_version.
+Pandas handles dataframe loading and manipulation.
 
-The program containes two functions that are part of the csv_processor module:
+The program contains two functions that are part of the csv_processor module:
 
 ### create_file_list(base_url="", identifier_list=[], file_extension="")
 
