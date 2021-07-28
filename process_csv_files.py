@@ -7,14 +7,6 @@ logging.basicConfig(
 level=logging.DEBUG, 
 format='%(asctime)s | %(levelname)s | %(message)s')
 
-"""
-TO DO:
-
-Create Test Data Programmatically
-Verify Local Install Instructions
-
-"""
-
 # Create List of Files using default options
 files = create_file_list()
 
@@ -23,8 +15,7 @@ merged_data = create_data_frame(files)
 
 # Pivot Data
 pivoted_dataframe = merged_data.pivot_table(index="user_id", columns="path", values="length", aggfunc="sum")
-logging.info("Data frame pivoted.")
-logging.info(pivoted_dataframe.shape[0], pivoted_dataframe.shape[1])
+logging.info(f"Data frame pivoted. {pivoted_dataframe.shape[0]} rows and {pivoted_dataframe.shape[1]} columns")
 
 # Save to CSV
 pivoted_dataframe.to_csv("data/web_traffic_data.csv")
