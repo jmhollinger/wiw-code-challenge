@@ -4,8 +4,9 @@
 ##  Setup
 
 1. Clone the repository
-2. Initialize the venv `source venv/bin/activate`
-3. Install dependencies from requirements.txt by running `pip3 install -r requirements.txt`
+2. Create the virtual environment `python3 -m venv venv`
+3. Initialize the virtual environment `source venv/bin/activate`
+4. Install dependencies from requirements.txt by running `pip3 install -r requirements.txt`
 
 ## Execution
 1. To process CSVs run `python3 process_csv_files.py`
