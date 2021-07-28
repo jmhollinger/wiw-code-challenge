@@ -19,3 +19,4 @@ logging.info(f"Data frame pivoted. {pivoted_dataframe.shape[0]} rows and {pivote
 
 # Save to CSV
 pivoted_dataframe.to_csv("data/web_traffic_data.csv")
+logging.info(f"File saved to data/web_traffic.csv")
