@@ -27,7 +27,7 @@ Pandas handles dataframe loading and manipulation. This program contains two fun
 
 This function creates a list of file urls for future processing based on a base_url, a list of filename identifiers, and the file extension of all the files.
 
-- base_url : This is the base_url for all files it defaults to.
+- base_url : This is the base_url for all files it defaults to https://public.wiwdata.com/engineering-challenge/data/.
 - identifier_list : This is the name of each file at the base_url. This defaults to lower case letters a-z (26 items).
 - file_extension : The extension of the files at the the base_url defaults to csv.
 
