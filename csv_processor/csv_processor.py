@@ -16,14 +16,10 @@ def create_file_list(base_url="https://public.wiwdata.com/engineering-challenge/
     file_extension : The extension of the files at the the base_url defaults to csv.
 
     """
+    # Create list of URLS from base_url, identifier, and extension.
+    url_list = [f'{base_url}{item}.{file_extension}' for item in identifier_list]
 
-    # Used my map function to concat file path elements
-    def create_url(identifier):
-        return f'{base_url}{identifier}.{file_extension}'
-
-    url_list = map(create_url, identifier_list)
-
-    return list(url_list)
+    return url_list
 
 
 def create_data_frame(url_list):
