@@ -1,7 +1,8 @@
 import pytest
 import pandas as pd
-from csv_processor import csv_processor as csv_processor
+import csv_processor
 
+print(csv_processor.create_file_list)
 
 # Set up test data in repo based on username and repo name.
 def create_test_data():
