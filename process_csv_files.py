@@ -1,5 +1,5 @@
 import pandas as pd
-from csv_processor import csv_processor as csv_processor
+import csv_processor
 import logging
 
 logging.basicConfig(
